@@ -24,7 +24,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ComEngEss-final-project-frontend
-            git pull
             tmux kill-session -t frontend
+            git pull
+            tmux new-session -t frontend
             npm i
             npm start
