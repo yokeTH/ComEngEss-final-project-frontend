@@ -1,0 +1,16 @@
+{
+  "name": "comengess-final-project-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "https://github.com/yokeTH/ComEngEss-final-project-frontend",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
