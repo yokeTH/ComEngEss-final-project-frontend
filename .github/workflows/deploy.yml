@@ -27,5 +27,6 @@ jobs:
             zsh
             source .zshrc
             cd ComEngEss-final-project-frontend
+            docker compose down
             git pull
-            docker compose restart
+            docker compose up -d --build
