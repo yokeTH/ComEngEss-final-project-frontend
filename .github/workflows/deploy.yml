@@ -23,6 +23,7 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            zsh
             cd ComEngEss-final-project-frontend
             tmux kill-session -t frontend
             git pull
