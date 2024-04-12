@@ -25,3 +25,6 @@ jobs:
           script: |
             cd ComEngEss-final-project-frontend
             git pull
+            tmux kill-session -t frontend
+            npm i
+            npm start
