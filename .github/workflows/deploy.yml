@@ -26,10 +26,6 @@ jobs:
             cd /home/final
             zsh
             source .zshrc
-            nvm use lts/iron
             cd ComEngEss-final-project-frontend
-            tmux kill-session -t frontend
             git pull
-            tmux new-session -t frontend
-            npm i
-            npm start
+            docker compose restart
