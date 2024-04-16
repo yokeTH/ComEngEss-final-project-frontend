@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Create Topics</title>
+</head>
+<body>
+    <div class="mobile-layout">
+        <div class="div">
+            <div class="section2"></div>
+            <input  placeholder="ADD YOUR TOPIC" id="add-topic">
+            
+                <div style="display: flex" class="flex">
+                   
+                        <label for="fileInput" class="file-input" id="preview"></label>
+                        <input type="file" id="fileInput" name="fileInput" style="display:none;" accept="image/*" onclick="handlefile()">
+                    
+                    <button type="submit" class="add-img">+</button>
+                    <h1 class="text-add-img">Add your image</h1>
+
+                    <div class="pane-description">
+                        <h1 class="Description">Description</h1>
+                        <textarea  placeholder="" id="add-description" ></textarea>
+                    </div>
+                </div>
+            
+            <!-- <input id="fileInput" type="file" name="fileInput" class="file-input" > -->
+            
+                
+           
+            <div id="pane-tag">
+                <h1 class="text-tag">TAG</h1>
+                <div class="shadox-box-tag"></div>
+                <div class="box-tag"> 
+                    <div class="val">
+                        <h1 id="val">10</h1>
+                    </div>
+                    <input type="range" min="1" max="10" value="10" step = "1" class="add-tag-slider" id="add-tag-slider">
+                    <div class="input-submit">
+                        <input type="text" placeholder="ADD YOUR TAG" class="add-tag" id="add-tag">
+                        <button type="submit" id="submit">+</button>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
