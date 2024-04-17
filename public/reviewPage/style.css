@@ -1,0 +1,157 @@
+
+html {
+    height:auto;
+    width:100vw;
+    background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
+    
+}
+
+
+@media screen and (min-width: 800px) {
+    .mobile-layout {
+        margin-left: 37%;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+    
+}
+
+a:link {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+  
+  /* ลิงก์ที่มีสถานะ hover */
+  a:hover {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+  
+  /* ลิงก์ที่ได้รับการคลิกและได้รับการซ้อนทับ */
+  a:active {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+
+.mobile-layout {
+    width: 375px;
+    height: auto;
+    margin: auto;
+    display: grid;
+    flex-direction: column;
+    
+    
+    
+}
+
+#topic{
+  top:5%;
+  width: 350px;
+  height: 50px;
+  justify-self: center;
+  text-align: center;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+  border-radius: 10px;
+  border-color: transparent;
+  padding-top: 15px;
+  padding-bottom: 2px;
+  font-size: 20px;
+  background-color: #ffffff;
+  position: fixed;
+}
+
+.div {
+  margin-top: 150px;
+  display: grid
+ 
+}
+
+.post-component {
+  margin-top: 10px;
+  justify-self: center;
+  
+  
+  background-color: transparent;
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.post-background {
+    justify-self: start;
+    width: 350px;
+    height: 400px;
+    background-color: whitesmoke;    
+    border-radius: 20px;
+    margin-bottom: 8%;
+    display: grid;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+.img {
+  margin: auto;
+  width: 95%;
+  height: auto;
+
+}
+
+.tag-component {
+  width: 100%;
+  height: 130px;
+  background-color: #b4b4e8;
+  
+  opacity: 30%;
+  border-radius: 15px;
+  overflow-y: scroll;
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+.each-tag {
+  margin-left: 17px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  height: 50px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.value {
+  z-index:auto;
+  margin: auto;
+  margin-left: 20px;
+
+}
+
+
+
+
+  .review-button {
+    margin: auto;
+    font-size: large;
+    font-weight: bold;
+    justify-self: center;
+    width: 350px; 
+    height: 40px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #ffc800;
+    color: #414141;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  }
+
+  .review-button:hover{
+    background-color: #8b5cf6;
+    color: white;
+
+  }
+
+  .review-button:active {
+    color: inherit;
+  }
+
+  
+  
+  
+  
+

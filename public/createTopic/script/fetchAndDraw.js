@@ -136,6 +136,8 @@ export async function handleFile() {
   const fileInput = document.getElementById('fileInput');
   const preview = document.getElementById('preview');
 
+  preview.innerHTML = '';
+
   const file = fileInput.files[0]; // เลือกไฟล์แรกที่ผู้ใช้เลือก
   const reader = new FileReader();
   reader.readAsDataURL(file);
@@ -143,7 +145,9 @@ export async function handleFile() {
   reader.onload = function () {
     imageUrl = reader.result; // URL ของรูปภาพ
     const imageElement = document.createElement('img');
+    imageElement.setAttribute('class', 'img');
     imageElement.src = imageUrl;
     preview.appendChild(imageElement);
   };
+  preview.setAttribute('id', 'img-bg');
 }

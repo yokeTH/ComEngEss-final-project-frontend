@@ -151,7 +151,26 @@ a:link {
     display: flex; /* กำหนดให้เป็น flex container */
     justify-content: center; /* จัดการแสดงผลแบบกึ่งกลางแนวนอน */
     align-items: center; /* จัดการแสดงผลแบบกึ่งกลางแนวตั้ง */
-    height: 100%; /* กำหนดความสูงของ label */
+    height: 200px; /* กำหนดความสูงของ label */
+    width: 200px;
+  }
+
+  #img-bg {
+    width: 200px;
+    height: 180px;
+    justify-self: center;
+    align-self: center;
+    background: #ffffff; /* สีพื้นหลังของปุ่ม */
+    border-radius: 20px; /* ขอบโค้งของปุ่ม */
+    margin-top: 30px;
+    padding-top: 30px;
+    text-align: center;
+
+
+    
+    /* margin-left: 5%; */
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+
   }
 
   #fileInput {
@@ -165,8 +184,21 @@ a:link {
     
   }
 
+  #preview {
+    display: grid;
+    width: 200px;
+    height: 230px;
+  }
+
   .file-input:hover {
     background-color: #e0e0e0; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อเม้าส์ไปชี้ */
+  }
+
+  .img {
+    margin: auto;
+    width: 95%;
+    height: auto;
+  
   }
 
 .add-img {
