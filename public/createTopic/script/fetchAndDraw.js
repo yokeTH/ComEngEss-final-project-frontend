@@ -1,4 +1,4 @@
-// import { createPost } from "../../api.js";
+import { createPost } from '../../api.js';
 
 let tags = [];
 let imageUrl = '';
@@ -122,13 +122,13 @@ export function updateValue() {
 }
 
 export async function post() {
-  // const userId = localStorage.getItem('userId');
+  const userId = 1;
   const topicName = document.querySelector('#add-topic').value;
   const description = document.querySelector('#add-description').value;
   const url = document.querySelector('.img').getAttribute('class');
   console.log(url);
   if (topicName !== '' && description !== '' && imageUrl !== '') {
-    // await createPost({userId:userId,topicName:topicName,tags:tags,photoUrl:imageUrl,description:description})
+    await createPost({ userId, topicName, tags, photoUrl: url, description });
     localStorage.setItem('topic', topicName);
     localStorage.setItem('description', description);
     localStorage.setItem('imgUrl', url);

@@ -1,5 +1,7 @@
 const topic = 'Topic';
 const imgUrl = localStorage.getItem('imgUrl');
+// const imgUrl = "";
+
 const posts = [
   {
     photoUrl: imgUrl,
@@ -38,6 +40,8 @@ export async function draw(posts) {
     postBackground.setAttribute('class', 'post-background');
     const img = document.createElement('img');
     img.setAttribute('src', imgUrl);
+    img.setAttribute('class', 'img');
+
     postBackground.appendChild(img);
     postComponent.appendChild(postBackground);
 
