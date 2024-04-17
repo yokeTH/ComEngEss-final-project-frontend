@@ -5,10 +5,10 @@
     <body>
         <div class="mobile-layout"> 
             <div class="wrapper">
-                
+                <div class="login-register">
                 <div class ="login-form">
                     <h2>Login</h2>
-                    <form method="post">
+      
                         <div class="input-box">
                             
                             <input type="username" placeholder="Username" id="login-username" required>
@@ -20,20 +20,20 @@
                            
                         </div>
                         
-                        <button type="submit" class="btn">Login</button>
-                        <div class="login-register">
+                        <button type="submit" class="btn" id="login">Login</button>
+                        
                             <p>Don't have an account?
                                 <a href="#" class="register-link">Register</a>
                             </p>
                         </div>
-                    </form>
+               
                 </div>
                 <div class ="register-form">
                     <h2>Register</h2>
-                    <form  method="post">
+                    
                         <div class="input-box">
                            
-                            <input type="username" placeholder="Username" id="Regis-username" required>
+                            <input type="username" placeholder="Username" id="regis-username" required>
                             
                         </div>
                         <div class="input-box">
@@ -47,17 +47,19 @@
                             
                         </div>
                         
-                        <button type="submit" class="btn" id="Register" >Register</button>
+                        <button type="submit" class="btn" id="register" >Register</button>
                         <div class="login-register">
                             <p>Already have an account?
                                 <a href="#" class="login-link">Login</a>
                             </p>
                         </div>
-                    </form>
+                
                 </div>
             </div>
         </div>
         
         <script src="script.js"></script>
+        <script type="module" src="../scripts/main.js"></script>
+
     </body>
 </html>
