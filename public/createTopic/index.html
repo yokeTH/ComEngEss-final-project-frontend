@@ -12,12 +12,12 @@
             <input  placeholder="ADD YOUR TOPIC" id="add-topic">
             
                 <div style="display: flex" class="flex">
-                   
+                    <div style="width: 200px; height: 200px; display: grid; margin-left: 1%;">
                         <label for="fileInput" class="file-input" id="preview"></label>
-                        <input type="file" id="fileInput" name="fileInput" style="display:none;" accept="image/*" onclick="handlefile()">
-                    
-                    <button type="submit" class="add-img">+</button>
-                    <h1 class="text-add-img">Add your image</h1>
+                        <input type="file" id="fileInput" name="fileInput" style="display:none;" accept="image/*"  >
+                        <button type="submit" class="add-img">+</button>
+                        <h1 class="text-add-img">Add your image</h1>
+                    </div>
 
                     <div class="pane-description">
                         <h1 class="Description">Description</h1>
@@ -47,7 +47,15 @@
 
             </div>
         </div>
+        <div style="display: flex; width: 100%; justify-items: center;">
+        <button type="submit" class="post" id="post" >
+            POST
+        </button>
+        <a  href="../index.html">
+        <button class="back" >Home</button>
+        </a>
+        </div>
     </div>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="./script/script.js"></script>
 </body>
 </html>

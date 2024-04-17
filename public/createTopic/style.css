@@ -1,19 +1,45 @@
 
 html {
-    background-color: grey;
+    height:100vh;
+    width:100vw;
+    background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
+    
 }
 
 
 @media screen and (min-width: 800px) {
     .mobile-layout {
         margin-left: 37%;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
     }
     
 }
+
+a:link {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+  
+  /* ลิงก์ที่มีสถานะ hover */
+  a:hover {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+  
+  /* ลิงก์ที่ได้รับการคลิกและได้รับการซ้อนทับ */
+  a:active {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+
 .mobile-layout {
-    background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
-    min-height: 100vh;
-    width: 430px;
+    width: 375px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     
     
     
@@ -22,7 +48,7 @@ html {
 .section2 {
     position: absolute;
     top: 120px;
-    margin-top: 20px;
+    margin-top: 50px;
     justify-self: center;
     width: 350px;
     height: 250px;
@@ -33,6 +59,8 @@ html {
 
 .flex {
     background-color: transparent;
+    margin-top: 10px;
+    gap: 5%;
 }
 
 .div {
@@ -41,7 +69,7 @@ html {
 
 #add-topic{
     
-    width: 350px;
+    width: 90%;
     height: 50px;
     justify-self: center;
     text-align: center;
@@ -57,7 +85,7 @@ html {
 
 
 .pane-description {
-    width: 150px;
+    width: 40%;
     height: 170px;
     justify-self: start;
     text-align: start;
@@ -69,14 +97,14 @@ html {
     background-color: #878bff;
     opacity: 100%;
     margin-top: 30px;
-    margin-left: 20px;
+    
     
 
 }
 
 
 #add-description {
-    width: 150px;
+    width: 100%;
     height: 130px;
     justify-self: start;
     text-align: start;
@@ -103,24 +131,23 @@ html {
 }
 
 .file-input{
-    width: 200px;
+    width: 100%;
     height: 200px;
     justify-self: center;
     content: ""; /* ข้อความที่แสดงแทนปุ่มอัพโหลด */
     background: #ffffff; /* สีพื้นหลังของปุ่ม */
     color: #fff; /* สีข้อความ */
-    padding: 8px 12px; /* ขนาดของปุ่ม */
     border-radius: 20px; /* ขอบโค้งของปุ่ม */
     cursor: pointer; /* เปลี่ยนรูปร่างเป็นตัวชี้ */
     margin-top: 30px;
-    margin-left: 20px;
+    /* margin-left: 5%; */
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
 
   }
 
   #fileInput {
-    width: 100%; /* ทำให้ input file มีความกว้างเท่ากับ div */
-    height: 100%; /* ทำให้ input file มีความสูงเท่ากับ div */
+    width: 200px;
+    height: 200px;
     position: absolute; /* ตั้งค่าเป็น absolute เพื่อให้ input file อยู่ในตำแหน่งที่ถูกต้องภายใน div */
     top: 0; /* ตั้งให้ input file อยู่ที่ด้านบนของ div */
     left: 0; /* ตั้งให้ input file อยู่ที่ด้านซ้ายของ div */
@@ -141,15 +168,15 @@ html {
     background-color: #6366f1;
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
     color: white;
-    top:27%;
-    left: 45.25%;
+    top:28%;
+    left: 42%;
 }
 
 .text-add-img {
     font-size: small;
     position: absolute;
-    top: 31%;
-    left:43.25%;
+    top: 32%;
+    left:40%;
     font-weight: lighter;
     color: #414141;
     
@@ -160,7 +187,7 @@ html {
     text-align: center;
     width: 350px;
     display: grid;
-    margin-top: 30px;
+    margin-top: 110px;
 }
 
 .text-tag {
@@ -289,7 +316,73 @@ html {
     color: #fff;
   }
 
-  
+  .delete-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border-color: transparent;
+    background-color: #ffc800;
+    font-size:25px;
+    font-weight: bold;
+    align-self: end;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+    
+  }
+
+  .delete-button:hover{
+    background-color: #6366f1;
+    color: #fff;
+  }
+
+  .back {
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 80px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #8963f1;
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+    
+   
+  }
+
+  .back:hover {
+    color: #414141;
+    background-color: #ffc800;
+
+  }
+
+
+  .post {
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 80px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    width: 75%;
+    height: 20%;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #8b5cf6;
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+
+  }
+
+  .post:hover{
+    background-color: #ffc800;
+    color: #414141;
+
+  }
+
+  .post:active {
+    color: inherit;
+  }
 
   
   
