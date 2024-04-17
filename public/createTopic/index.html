@@ -13,17 +13,21 @@
             
                 <div style="display: flex" class="flex">
                     <div style="width: 200px; height: 200px; display: grid; margin-left: 1%;">
-                        <label for="fileInput" class="file-input" id="preview"></label>
-                        <input type="file" id="fileInput" name="fileInput" style="display:none;" accept="image/*"  >
-                        <button type="submit" class="add-img">+</button>
-                        <h1 class="text-add-img">Add your image</h1>
+                        <label for="fileInput" class="file-input label" id="preview">Add your image</label>
+                        <input type="file" id="fileInput" name="fileInput" style="display:none;" accept="image/*">
+                        
                     </div>
-
+                    
                     <div class="pane-description">
                         <h1 class="Description">Description</h1>
                         <textarea  placeholder="" id="add-description" ></textarea>
                     </div>
                 </div>
+                <div style="width: 375px; height: 30px; display: flex;">
+                    <button type="submit" class="add-img">+</button>
+                </div>
+
+               
             
             <!-- <input id="fileInput" type="file" name="fileInput" class="file-input" > -->
             
@@ -47,13 +51,13 @@
 
             </div>
         </div>
-        <div style="display: flex; width: 100%; justify-items: center;">
-        <button type="submit" class="post" id="post" >
-            POST
-        </button>
-        <a  href="../index.html">
-        <button class="back" >Home</button>
-        </a>
+        <div style="display: flex;  width: 375px; justify-items: center;  position: fixed; bottom: 5%;">
+            <button type="submit" class="post" id="post" >
+                POST
+            </button>
+            <a  href="../index.html">
+                <button class="back" >Home</button>
+            </a>
         </div>
     </div>
     <script type="module" src="./script/script.js"></script>

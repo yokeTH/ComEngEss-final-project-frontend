@@ -1,6 +1,6 @@
 
 html {
-    height:100vh;
+    height:auto;
     width:100vw;
     background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
     
@@ -36,7 +36,7 @@ a:link {
 
 .mobile-layout {
     width: 375px;
-    height: 100vh;
+    height: auto;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -134,15 +134,24 @@ a:link {
     width: 100%;
     height: 200px;
     justify-self: center;
-    content: ""; /* ข้อความที่แสดงแทนปุ่มอัพโหลด */
+    content: "Add your image"; /* ข้อความที่แสดงแทนปุ่มอัพโหลด */
     background: #ffffff; /* สีพื้นหลังของปุ่ม */
-    color: #fff; /* สีข้อความ */
+    color: #414141; /* สีข้อความ */
     border-radius: 20px; /* ขอบโค้งของปุ่ม */
     cursor: pointer; /* เปลี่ยนรูปร่างเป็นตัวชี้ */
     margin-top: 30px;
+    text-align: center;
+    
     /* margin-left: 5%; */
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
 
+  }
+
+  .label {
+    display: flex; /* กำหนดให้เป็น flex container */
+    justify-content: center; /* จัดการแสดงผลแบบกึ่งกลางแนวนอน */
+    align-items: center; /* จัดการแสดงผลแบบกึ่งกลางแนวตั้ง */
+    height: 100%; /* กำหนดความสูงของ label */
   }
 
   #fileInput {
@@ -153,6 +162,7 @@ a:link {
     left: 0; /* ตั้งให้ input file อยู่ที่ด้านซ้ายของ div */
     opacity: 0; /* ทำให้ input file โปร่งใสเพื่อซ่อนการแสดงผล */
     cursor: pointer; /* เปลี่ยนรูปร่างเป็นตัวชี้เมื่อชี้ที่ div */
+    
   }
 
   .file-input:hover {
@@ -161,15 +171,15 @@ a:link {
 
 .add-img {
     border-radius: 100%;
-    position: absolute;
-    width: 30px;
-    height: 30px;
+    position: relative;
+    width: 40px;
+    height: 40px;
     border: transparent;
     background-color: #6366f1;
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
     color: white;
-    top:28%;
-    left: 42%;
+    top:26%;
+    left: 47%;
 }
 
 .text-add-img {
@@ -182,12 +192,18 @@ a:link {
     
 }
 
+#preview {
+  max-width: 100%; /* ให้ภาพไม่เกินความกว้างของ div */
+  max-height: 300px; /* กำหนดความสูงสูงสุดของภาพ */
+}
+
 #pane-tag {
     justify-self: center;
     text-align: center;
     width: 350px;
     display: grid;
-    margin-top: 110px;
+    margin-top: 80px;
+    flex-wrap: wrap;
 }
 
 .text-tag {
@@ -335,19 +351,16 @@ a:link {
   }
 
   .back {
-    margin: auto;
-    margin-top: 70px;
-    margin-bottom: 80px;
+    margin-left: 25%;
     font-size: large;
     font-weight: bold;
     color: white;
     width: 100%;
-    height: 20%;
+    height: 40px;
     border-radius: 10px;
     border: transparent;
     background-color: #8963f1;
-    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-    
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));    
    
   }
 
@@ -359,19 +372,18 @@ a:link {
 
 
   .post {
-    margin: auto;
-    margin-top: 70px;
-    margin-bottom: 80px;
+    
+    margin-left: 5%;
     font-size: large;
     font-weight: bold;
+    justify-self: start;
     color: white;
-    width: 75%;
-    height: 20%;
+    width: 70%;
+    height: 40px;
     border-radius: 10px;
     border: transparent;
     background-color: #8b5cf6;
-    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   }
 
   .post:hover{

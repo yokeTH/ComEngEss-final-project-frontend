@@ -1,5 +1,7 @@
+// import { createPost } from "../../api.js";
+
 let tags = [];
-let count = 0;
+let imageUrl = '';
 
 export async function drawTable() {
   const root = document.getElementById('pane-tag');
@@ -98,12 +100,11 @@ export async function drawTable() {
 }
 
 export async function createTag() {
-  count++;
   const score = document.getElementById('add-tag-slider').value;
   const nameTag = document.getElementById('add-tag').value;
 
   if (nameTag !== '' && tags.find((e) => e.nameTag === nameTag) === undefined) {
-    tags.push({ nameTag, score, id: count });
+    tags.push({ nameTag, score });
     drawTable();
   }
 }
@@ -121,10 +122,28 @@ export function updateValue() {
 }
 
 export async function post() {
-  const nameTopic = document.querySelector('#add-topic').value;
+  // const userId = localStorage.getItem('userId');
+  const topicName = document.querySelector('#add-topic').value;
   const description = document.querySelector('#add-description').value;
-  if (nameTopic !== '' && description !== '') {
+  if (topicName !== '' && description !== '' && imageUrl !== '') {
+    // await createPost({userId:userId,topicName:topicName,tags:tags,photoUrl:imageUrl,description:description})
     tags = [];
     drawTable();
   }
+}
+
+export async function handleFile() {
+  const fileInput = document.getElementById('fileInput');
+  const preview = document.getElementById('preview');
+
+  const file = fileInput.files[0]; // เลือกไฟล์แรกที่ผู้ใช้เลือก
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+
+  reader.onload = function () {
+    imageUrl = reader.result; // URL ของรูปภาพ
+    const imageElement = document.createElement('img');
+    imageElement.src = imageUrl;
+    preview.appendChild(imageElement);
+  };
 }
