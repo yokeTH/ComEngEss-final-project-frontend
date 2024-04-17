@@ -125,8 +125,13 @@ export async function post() {
   // const userId = localStorage.getItem('userId');
   const topicName = document.querySelector('#add-topic').value;
   const description = document.querySelector('#add-description').value;
+  const url = document.querySelector('.img').getAttribute('class');
+  console.log(url);
   if (topicName !== '' && description !== '' && imageUrl !== '') {
     // await createPost({userId:userId,topicName:topicName,tags:tags,photoUrl:imageUrl,description:description})
+    localStorage.setItem('topic', topicName);
+    localStorage.setItem('description', description);
+    localStorage.setItem('imgUrl', url);
     tags = [];
     drawTable();
   }
@@ -147,6 +152,7 @@ export async function handleFile() {
     const imageElement = document.createElement('img');
     imageElement.setAttribute('class', 'img');
     imageElement.src = imageUrl;
+    localStorage.setItem('imgUrl', imageUrl);
     preview.appendChild(imageElement);
   };
   preview.setAttribute('id', 'img-bg');

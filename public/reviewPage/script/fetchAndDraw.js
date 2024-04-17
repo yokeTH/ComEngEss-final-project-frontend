@@ -1,55 +1,63 @@
-// import { createPost } from "../../api.js";
+const topic = 'Topic';
+const imgUrl = localStorage.getItem('imgUrl');
+const posts = [
+  {
+    photoUrl: imgUrl,
+    tags: [
+      { name: 'ความสวย', score: 10 },
+      { name: 'ความงง', score: 8 },
+      { name: 'ความตลก', score: 3 },
+    ],
+  },
+  {
+    photoUrl: imgUrl,
+    tags: [
+      { name: 'ความนอย', score: 5 },
+      { name: 'ความตลก', score: 7 },
+    ],
+  },
+];
 
-let tags = [];
-let imageUrl = '';
+export async function fetchAndDraw() {
+  draw(posts);
+}
 
-export async function drawTable() {}
+export async function draw(posts) {
+  document.getElementById('topic').innerText = topic;
 
-export async function createTag() {
-  const score = document.getElementById('add-tag-slider').value;
-  const nameTag = document.getElementById('add-tag').value;
+  const root = document.querySelector('.div');
+  root.innerHTML = '';
+  for (const post of posts) {
+    const imgUrl = post.photoUrl;
+    const tags = post.tags;
 
-  if (nameTag !== '' && tags.find((e) => e.nameTag === nameTag) === undefined) {
-    tags.push({ nameTag, score });
-    drawTable();
+    const postComponent = document.createElement('div');
+    postComponent.setAttribute('class', 'post-component');
+
+    const postBackground = document.createElement('div');
+    postBackground.setAttribute('class', 'post-background');
+    const img = document.createElement('img');
+    img.setAttribute('src', imgUrl);
+    postBackground.appendChild(img);
+    postComponent.appendChild(postBackground);
+
+    const tagComponent = document.createElement('div');
+    tagComponent.setAttribute('class', 'tag-component');
+
+    for (const tag of tags) {
+      const eachTag = document.createElement('div');
+      eachTag.setAttribute('class', 'each-tag');
+      eachTag.setAttribute('style', 'display: flex;');
+      const tagValue = document.createElement('h2');
+      tagValue.setAttribute('class', 'value');
+      tagValue.innerText = `${tag.name} ${tag.score}`;
+      eachTag.appendChild(tagValue);
+      const len = 9 * tag.score;
+      eachTag.setAttribute('style', `width:${len}%`);
+      tagComponent.appendChild(eachTag);
+    }
+
+    postComponent.appendChild(tagComponent);
+    root.appendChild(postComponent);
   }
-}
-
-export async function deleteTag(id) {
-  tags = tags.filter((e) => e.nameTag !== id);
-  drawTable();
-  console.log(tags);
-}
-
-export function updateValue() {
-  const value = document.getElementById('add-tag-slider').value;
-  const val = document.getElementById('val');
-  val.innerText = value;
-}
-
-export async function post() {
-  // const userId = localStorage.getItem('userId');
-  const topicName = document.querySelector('#add-topic').value;
-  const description = document.querySelector('#add-description').value;
-  if (topicName !== '' && description !== '' && imageUrl !== '') {
-    // await createPost({userId:userId,topicName:topicName,tags:tags,photoUrl:imageUrl,description:description})
-    tags = [];
-    drawTable();
-  }
-}
-
-export async function handleFile() {
-  const fileInput = document.getElementById('fileInput');
-  const preview = document.getElementById('preview');
-
-  const file = fileInput.files[0]; // เลือกไฟล์แรกที่ผู้ใช้เลือก
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-
-  reader.onload = function () {
-    imageUrl = reader.result; // URL ของรูปภาพ
-    const imageElement = document.createElement('img');
-    imageElement.src = imageUrl;
-    preview.appendChild(imageElement);
-  };
 }
