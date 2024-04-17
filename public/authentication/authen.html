@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+    <title>sign in</title>
+    <body>
+        <div class="mobile-layout"> 
+            <div class="wrapper">
+                
+                <div class ="login-form">
+                    <h2>Login</h2>
+                    <form method="post">
+                        <div class="input-box">
+                            
+                            <input type="username" placeholder="Username" id="login-username" required>
+                            
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="password" placeholder="Password" id="login-password" required>
+                           
+                        </div>
+                        
+                        <button type="submit" class="btn">Login</button>
+                        <div class="login-register">
+                            <p>Don't have an account?
+                                <a href="#" class="register-link">Register</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div class ="register-form">
+                    <h2>Register</h2>
+                    <form  method="post">
+                        <div class="input-box">
+                           
+                            <input type="username" placeholder="Username" id="Regis-username" required>
+                            
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="email" placeholder="Email" id="regis-email" required>
+                            
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="password" placeholder="Password" id="regis-password" required>
+                            
+                        </div>
+                        
+                        <button type="submit" class="btn" id="Register" >Register</button>
+                        <div class="login-register">
+                            <p>Already have an account?
+                                <a href="#" class="login-link">Login</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
