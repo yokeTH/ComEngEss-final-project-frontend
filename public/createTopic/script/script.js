@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const postButton = document.getElementById('post');
   postButton.addEventListener('click', () => post());
 
-  const fileInput = document.getElementById('fileInput');
-  fileInput.addEventListener('click', () => handleFile());
+  // const fileInput = document.getElementById('fileInput');
+  // fileInput.addEventListener('input', () => handleFile());
 });

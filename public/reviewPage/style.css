@@ -77,7 +77,7 @@ a:link {
   justify-self: center;
   
   
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(144, 110, 255, 0.554);
   opacity: 100%;
   border-radius: 20px;
   margin-bottom: 40px;
@@ -145,29 +145,53 @@ a:link {
 
 
 
-  .review-button {
-    margin: auto;
-    font-size: large;
-    font-weight: bold;
-    justify-self: center;
-    width: 350px; 
-    height: 40px;
-    border-radius: 10px;
-    border: transparent;
-    background-color: #ffc800;
-    color: #414141;
-    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-  }
+.back {
+  margin-left: 25%;
+  font-size: large;
+  font-weight: bold;
+  color: #414141;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  border: transparent;
+  background-color: #ffc800;
 
-  .review-button:hover{
-    background-color: #8b5cf6;
-    color: white;
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));    
+ 
+}
 
-  }
+.back:hover {
+  color: white;
+  background-color: #8b5cf6;
 
-  .review-button:active {
-    color: inherit;
-  }
+}
+
+
+.review-button {
+  
+  margin-left: 5%;
+  font-size: large;
+  font-weight: bold;
+  justify-self: start;
+  color: #414141;
+  width: 70%;
+  height: 40px;
+  border-radius: 10px;
+  border: transparent;
+  background-color: #ffc800;
+
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+.review-button:hover{
+  background-color: #8b5cf6;
+  color: white;
+
+}
+
+.post:active {
+  color: inherit;
+}
 
   
   

@@ -122,13 +122,13 @@ export function updateValue() {
 }
 
 export async function post() {
-  const userId = 1;
   const topicName = document.querySelector('#add-topic').value;
   const description = document.querySelector('#add-description').value;
-  const url = document.querySelector('.img').getAttribute('class');
+  const url = imageUrl;
+
   console.log(url);
   if (topicName !== '' && description !== '' && imageUrl !== '') {
-    await createPost({ userId, topicName, tags, photoUrl: url, description });
+    await createPost({ topicName, tags, description, url });
     localStorage.setItem('topic', topicName);
     localStorage.setItem('description', description);
     localStorage.setItem('imgUrl', url);
@@ -156,4 +156,5 @@ export async function handleFile() {
     preview.appendChild(imageElement);
   };
   preview.setAttribute('id', 'img-bg');
+  document.querySelector('.add-img');
 }
