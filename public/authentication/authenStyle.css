@@ -18,6 +18,7 @@ body{
     min-height: 100vh;
     width: 400px;
     align-content: center;
+    display: grid;
     
 }
 
@@ -75,15 +76,17 @@ body{
     font-size: 0.45cm;
     pointer-events: none;
     /* transition: 0.5s; */
+    
 }
 .input-box ::placeholder{
     color: rgba(0, 0, 0, 0.714);
 }
-.input-box input:focus~label,
+/* .input-box input:focus~label,
 .input-box input:valid~label {
     /* top: -1px; */
-    display: none;
-}
+    /* display: none; */ 
+/* } */
+
 .input-box input{
     position:absolute;
     top: 50%;
@@ -92,6 +95,13 @@ body{
     outline: none;
     font-weight: 700;
     
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #000000 !important;
 }
 
 .btn{
@@ -140,3 +150,50 @@ body{
     transform: translateX(0px);
     
 }
+.popup {
+    /* position: relative; */
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    position: fixed;
+    margin-top:100%;
+    
+    
+    
+  }
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    /* position: fixed; */
+    z-index: 1;
+    bottom: 125%;
+    /* left: 50%; */
+    /* margin-left: -80px; */
+    
+
+  }
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
