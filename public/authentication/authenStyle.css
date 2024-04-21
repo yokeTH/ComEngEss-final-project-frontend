@@ -135,10 +135,11 @@ input:-webkit-autofill:active {
     /* display: none; */
     transition: none;
     transform: translateX(-300px);
+    transition: 0.5s;
 }
 .wrapper.active .register-form{
     transform: translateX(0px);
-    
+    transition: 0.5s;
 }
 .wrapper .register-form{
     /* display: none; */
@@ -146,7 +147,7 @@ input:-webkit-autofill:active {
     transform: translateX(300px);
 }
 .wrapper .login-form{
-    
+    transition: 0.5s;
     transform: translateX(0px);
     
 }
@@ -161,12 +162,14 @@ input:-webkit-autofill:active {
     
     position: fixed;
     margin-top:100%;
+    pointer-events: none;
     
     
     
   }
   .popup .popuptext {
     visibility: hidden;
+    /* display: none; */
     width: 160px;
     background-color: #555;
     color: #fff;
@@ -178,11 +181,13 @@ input:-webkit-autofill:active {
     bottom: 125%;
     /* left: 50%; */
     /* margin-left: -80px; */
+    pointer-events: none;
     
 
   }
   .popup .show {
     visibility: visible;
+    /* display: block; */
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
   }

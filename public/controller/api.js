@@ -3,32 +3,83 @@ export const backEndUrl = 'https://cee-final-api.yoke-th.me';
 export async function createUser(username, email, password) {
   const user = await fetch(`${backEndUrl}/user/add-user`, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       username: username,
       email: email,
       password: password,
     }),
-  });
-  return user.json();
+  }).then((res) => res.json());
+  return user;
 }
 
 export async function login(username, password) {
   const info = await fetch(`${backEndUrl}/user/login`, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       username: username,
       password: password,
     }),
-  });
-  return info.json();
+  }).then((res) => res.json());
+  return info;
 }
 
-export async function refreshToken(username, password) {
+export async function refreshToken(token) {
   const newToken = await fetch(`${backEndUrl}/user/validate-token`, {
-    method: 'GET',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
-      token: accessToken,
+      token: token,
     }),
-  });
+  }).then((a) => a.json());
   return newToken;
+  // ///////////////////////POST//////////////////////////////////////////////////////////
+}
+const token = localStorage.getItem('token');
+export async function getPost() {
+  const post = await fetch(`${backEndUrl}/posts`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `${token}`,
+    },
+  }).then((a) => a.json());
+  return post;
+}
+export async function getPostById() {
+  const post = await fetch(`${backEndUrl}/posts/:id`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `${token}`,
+    },
+  }).then((a) => a.json());
+  return post;
+}
+export async function getPostByTopic() {
+  const post = await fetch(`${backEndUrl}/posts/topic/:name`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      autherization: `${token}`,
+    },
+  }).then((a) => a.json());
+  return post;
+}
+export async function getPostByTag() {
+  const post = await fetch(`${backEndUrl}/posts/tag/:name`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      autherization: `${token}`,
+    },
+  }).then((a) => a.json());
+  return post;
 }

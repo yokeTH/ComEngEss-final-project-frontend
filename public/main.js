@@ -1,12 +1,17 @@
-// document.getElementById('time').innerHTML = new Date(Date.now()).toDateString();
-
-const changePage = setTimeout(toNextPage, 5000);
-
-function toNextPage() {
-  try {
-    // window.location.href = './homepage/home.html';
-    window.location.href = './authentication/authen.html';
-  } catch (e) {
-    window.location.href = './authentication/authen.html';
-  }
-}
+import { refreshToken } from './controller/api.js';
+document.addEventListener('DOMContentLoaded', async () => {
+  const welcome = document.querySelector('.set-to-click');
+  // Check if element exists before adding event listener
+  console.log(welcome);
+  welcome.addEventListener('click', async () => {
+    const token = localStorage.getItem('token');
+    const newToken = await refreshToken(token);
+    console.log(newToken);
+    console.log(token);
+    if (newToken.data === 'expired') {
+      window.location.href = '../authentication/authen.html';
+    } else {
+      window.location.href = '../homepage/home.html';
+    }
+  });
+});
