@@ -1,13 +1,21 @@
 import { getPostbyTopic } from '../../api.js';
 
 // const topicName = localStorage.getItem('topicName');
-const topicName = 'Test';
+let topicName = '';
 // const imgUrl = localStorage.getItem('imgUrl');
 // const imgUrl = "";
 
 let posts = [];
 
+export async function getTopicName() {
+  const query = new URLSearchParams(window.location.search);
+  topicName = query.get('topic').toString();
+  console.log(topicName);
+  return topicName;
+}
+
 export async function fetchAndDraw() {
+  getTopicName();
   posts = await getPostbyTopic(topicName);
   console.log(`fetch ${posts}`);
   draw(posts);

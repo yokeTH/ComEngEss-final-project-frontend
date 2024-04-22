@@ -76,7 +76,10 @@ a:link {
 .flex {
     background-color: transparent;
     margin-top: 10px;
-    gap: 5%;
+    gap: 7%;
+    justify-self: center;
+    display: flex;
+    flex: 1 1 0%;
 }
 
 .div {
@@ -103,7 +106,7 @@ a:link {
 .pane-description {
     width: 40%;
     height: 170px;
-    justify-self: start;
+    justify-self: end;
     text-align: start;
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
     border-radius: 20px;
@@ -113,6 +116,7 @@ a:link {
     background-color: #878bff;
     opacity: 100%;
     margin-top: 30px;
+
     
     
 
@@ -431,7 +435,7 @@ a:link {
     font-weight: bold;
     justify-self: start;
     color: white;
-    width: 70%;
+    width: 80%;
     height: 40px;
     border-radius: 10px;
     border: transparent;
