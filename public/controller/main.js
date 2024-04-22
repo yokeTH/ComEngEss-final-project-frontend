@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const status = await response.status;
       const message = status.message;
-
+      console.log(message);
       if (message === 'success') {
         setTimeout(500);
         window.location.href = '../authentication/authen.html';

@@ -34,14 +34,19 @@ body{
     width: 330px;
     height: 40px;
     justify-self:center;
-    margin-top: 2%;
+    margin-top: 40px;
     margin-bottom: 2%;
     background-color:rgba(215, 207, 207, 0.832);
     border-radius: 20px;
+    transition: width 0.5s ease;
+}
+.search-box.small{
+    width: 170px;
 }
 .icon{
     color:#6d28d9;
     font-size:3.8vh;
+    position: fixed;
     /* padding-top: 3px; */
     padding-left: 6.5px;
     justify-self: center;
@@ -50,7 +55,7 @@ body{
 .searchtab{
     position: relative;
     margin-bottom: 0.7px;
-    margin-left: 5px;
+    margin-left: 40px;
     justify-content: center;
     align-self: center;
     width: 75%;
@@ -58,10 +63,15 @@ body{
     border: none;
     border-bottom: 2px solid #6d28d9;
     outline: none;
+    transition: width 0.5s ease;
+
 }
 .searchtab::placeholder{
     color: #6d28d9;
     padding-left: 4px;
+}
+.searchtab.small{
+    width: 110px;
 }
 
 /* ///////////////////TOP///////////////////// */

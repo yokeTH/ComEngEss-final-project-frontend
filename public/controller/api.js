@@ -83,3 +83,17 @@ export async function getPostByTag() {
   }).then((a) => a.json());
   return post;
 }
+/////////tag//////////////////////////////////////////////////////////
+export async function getTags(name) {
+  const tag = await fetch(`${backEndUrl}/tagtop/tags`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+      autherization: `${token}`,
+    },
+  }).then((a) => a.json());
+  return tag;
+}
+export async function getTopics(name) {
+  const topic = await fetch();
+}
