@@ -3,11 +3,14 @@
   font-family: 'Kanit', sans-serif;
 }
 
-html {
-    height:auto;
-    width:100vw;
-    background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
-    
+body{
+  min-height: 950px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
+
 }
 
 
@@ -15,12 +18,11 @@ html {
     .mobile-layout {
         margin-left: 37%;
         display: flex;
-        justify-content: center; 
+        /* justify-content: center;  */
         align-items: center;
     }
     
 }
-
 a:link {
     text-decoration: none; /* ไม่มีขีดเส้นใต้ */
     color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
@@ -67,14 +69,15 @@ a:link {
 }
 
 .div {
-  margin-top: 150px;
-  display: grid
+  margin-top: 30%;
+  display: grid;
  
 }
 
 .post-component {
   margin-top: 10px;
-  justify-self: center;
+  justify-self: start;
+  align-self: start;
   
   
   background-color: rgba(144, 110, 255, 0.554);
@@ -93,7 +96,7 @@ a:link {
     background-color: whitesmoke;    
     border-radius: 20px;
     margin-bottom: 16px;
-    /* display: grid; */
+    display: grid;
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
 

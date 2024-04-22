@@ -1,36 +1,27 @@
-const topic = 'Topic';
-const imgUrl = localStorage.getItem('imgUrl');
+import { getPostbyTopic } from '../../api.js';
+
+// const topicName = localStorage.getItem('topicName');
+const topicName = 'Test';
+// const imgUrl = localStorage.getItem('imgUrl');
 // const imgUrl = "";
 
-const posts = [
-  {
-    photoUrl: imgUrl,
-    tags: [
-      { name: 'ความสวย', score: 10 },
-      { name: 'ความงง', score: 8 },
-      { name: 'ความตลก', score: 3 },
-    ],
-  },
-  {
-    photoUrl: imgUrl,
-    tags: [
-      { name: 'ความนอย', score: 5 },
-      { name: 'ความตลก', score: 7 },
-    ],
-  },
-];
+let posts = [];
 
 export async function fetchAndDraw() {
+  posts = await getPostbyTopic(topicName);
+  console.log(`fetch ${posts}`);
   draw(posts);
 }
 
 export async function draw(posts) {
-  document.getElementById('topic').innerText = topic;
+  document.getElementById('topic').innerText = topicName;
 
   const root = document.querySelector('.div');
   root.innerHTML = '';
+  // if(posts.length !== 0){
   for (const post of posts) {
     const imgUrl = post.photoUrl;
+    console.log(imgUrl);
     const tags = post.tags;
 
     const postComponent = document.createElement('div');
@@ -64,4 +55,5 @@ export async function draw(posts) {
     postComponent.appendChild(tagComponent);
     root.appendChild(postComponent);
   }
+  // }
 }

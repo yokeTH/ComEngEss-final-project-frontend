@@ -1,5 +1,6 @@
 import { createPost } from '../../api.js';
 
+// const topicName = 'topic';
 let tags = [];
 let imageUrl = '';
 
