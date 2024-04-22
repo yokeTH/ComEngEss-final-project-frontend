@@ -110,7 +110,7 @@ export async function createTag() {
 }
 
 export async function deleteTag(id) {
-  tags = tags.filter((e) => e.nameTag !== id);
+  tags = tags.filter((e) => e.name !== id);
   drawTable();
   console.log(tags);
 }

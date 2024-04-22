@@ -1,10 +1,20 @@
 import { createPost } from '../../api.js';
 
-// const topicName = 'topic';
+let topicName = '';
 let tags = [];
 let imageUrl = '';
 
+export async function getTopicName() {
+  const query = new URLSearchParams(window.location.search);
+  topicName = query.get('topic').toString();
+  console.log(topicName);
+  return topicName;
+}
+
 export async function drawTable() {
+  getTopicName();
+  const topicElement = document.querySelector('#topic');
+  topicElement.innerText = topicName;
   const root = document.getElementById('pane-tag');
   const currentVal = document.getElementById('add-tag-slider').value;
   root.innerHTML = '';
@@ -111,7 +121,7 @@ export async function createTag() {
 }
 
 export async function deleteTag(id) {
-  tags = tags.filter((e) => e.nameTag !== id);
+  tags = tags.filter((e) => e.name !== id);
   drawTable();
   console.log(tags);
 }
@@ -123,7 +133,6 @@ export function updateValue() {
 }
 
 export async function post() {
-  const topicName = document.querySelector('#add-topic').value;
   const description = document.querySelector('#add-description').value;
   const url = imageUrl;
 
