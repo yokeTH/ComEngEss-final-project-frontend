@@ -181,6 +181,7 @@ a:link {
     margin-top: 30px;
     padding-top: 30px;
     text-align: center;
+    position: relative;
     /* margin-left: 5%; */
     filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
 
@@ -208,9 +209,15 @@ a:link {
   }
 
   .img {
+    position: absolute;
+    top:50%;
+    left: 50%;
     margin: auto;
-    width: auto;
-    height: 95%;
+    /* width: 95%;
+    height: 95%; */
+    max-height: 95%;
+    max-width: 95%;
+    transform: translate(-50%,-50%);
   
   }
 
