@@ -1,3 +1,4 @@
+
 import { refreshToken } from './controller/api.js';
 document.addEventListener('DOMContentLoaded', async () => {
   const welcome = document.querySelector('.set-to-click');
