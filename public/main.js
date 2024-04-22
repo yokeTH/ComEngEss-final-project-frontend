@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   async function freshToken() {
-    if (window.localStorage.localStorage != './index.html' && window.location.href != './authentication/authen.html') {
+    if (window.location.href != './index.html' && window.location.href != './authentication/authen.html') {
       const oldToken = localStorage.getItem('token');
       const newToken = await refreshToken(oldToken);
       localStorage.setItem('token', newToken);
