@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const email = document.getElementById('regis-email').value;
     const password = document.getElementById('regis-password').value;
     // add valid user
-    if (isValidEmail(email)) {
+    if (isValidEmail(email) && isValidPassword(password)) {
       const response = await createUser(name, email, password);
 
       const status = await response.status;
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       popupTool('username or password incorrect');
     } else if (message === 'success') {
       const token = await response.data.access_token;
+
       localStorage.setItem('token', token);
       console.log(localStorage.getItem('token'));
       window.location.href = '../homepage/home.html';

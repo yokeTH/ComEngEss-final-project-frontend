@@ -14,4 +14,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       window.location.href = '../homepage/home.html';
     }
   });
+
+  async function freshToken() {
+    if (window.localStorage.localStorage != './index.html' && window.location.href != './authentication/authen.html') {
+      const oldToken = localStorage.getItem('token');
+      const newToken = await refreshToken(oldToken);
+      localStorage.setItem('token', newToken);
+    }
+  }
 });
