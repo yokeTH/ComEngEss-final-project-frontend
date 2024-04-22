@@ -1,0 +1,449 @@
+
+*{
+  font-family: 'Kanit', sans-serif;
+
+}
+
+/* html {
+    height:auto;
+    width:100vw;
+    background-repeat: no-repeat; 
+    background-size: contain;
+  
+    
+} */
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
+
+}
+
+
+@media screen and (min-width: 800px) {
+    .mobile-layout {
+        margin-left: 37%;
+        display: flex;
+        /* justify-content: center;  */
+        align-items: center;
+    }
+    
+}
+
+a:link {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+  
+  /* ลิงก์ที่มีสถานะ hover */
+  a:hover {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+  
+  /* ลิงก์ที่ได้รับการคลิกและได้รับการซ้อนทับ */
+  a:active {
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+    color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
+  }
+
+.mobile-layout {
+  min-height: 100vh;
+  width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+}
+
+.section2 {
+    position: absolute;
+    top: 120px;
+    margin-top: 50px;
+    justify-self: center;
+    width: 350px;
+    height: 250px;
+    background-image: linear-gradient(to right bottom ,white,#244ea6,#6366f1 ,white);
+    border-radius: 20px;
+    opacity: 30%;
+}
+
+.flex {
+    background-color: transparent;
+    margin-top: 10px;
+    gap: 5%;
+}
+
+.div {
+    display: grid;
+}
+
+#topic{
+    padding-top: 15px;
+    width: 90%;
+    height: 50px;
+    justify-self: center;
+    text-align: center;
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+    border-radius: 10px;
+    border-color: transparent;
+    margin-top: 10%;
+    font-size: 20px;
+    background-color: #ffffff;
+    grid-column: span 1/span 1;
+}
+
+
+
+.pane-description {
+    width: 40%;
+    height: 170px;
+    justify-self: start;
+    text-align: start;
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+    border-radius: 20px;
+    border-color: transparent;
+    color: white;
+    font-size: medium;
+    background-color: #878bff;
+    opacity: 100%;
+    margin-top: 30px;
+    
+    
+
+}
+
+
+#add-description {
+    width: 85%;
+    height: 130px;
+    justify-self: start;
+    text-align: start;
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+    border-color: transparent;
+    border-radius: 20px;
+    color: white;
+    font-size: medium;
+    background-color: transparent;
+    opacity: 80%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+
+.Description {
+    z-index: 100;
+    margin-left: 10%;
+    font-size: medium;
+    color: white;
+    opacity: 100%;
+    height: 15px;
+}
+
+.file-input{
+    width: 100%;
+    height: 200px;
+    justify-self: center;
+    content: "Add your image"; /* ข้อความที่แสดงแทนปุ่มอัพโหลด */
+    background: #ffffff; /* สีพื้นหลังของปุ่ม */
+    color: #414141; /* สีข้อความ */
+    border-radius: 20px; /* ขอบโค้งของปุ่ม */
+    cursor: pointer; /* เปลี่ยนรูปร่างเป็นตัวชี้ */
+    margin-top: 30px;
+    text-align: center;
+    
+    /* margin-left: 5%; */
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+
+  }
+
+  .label {
+    display: flex; /* กำหนดให้เป็น flex container */
+    justify-content: center; /* จัดการแสดงผลแบบกึ่งกลางแนวนอน */
+    align-items: center; /* จัดการแสดงผลแบบกึ่งกลางแนวตั้ง */
+    height: 200px; /* กำหนดความสูงของ label */
+    width: 200px;
+  }
+
+  #img-bg {
+    width: 200px;
+    height: 180px;
+    justify-self: center;
+    align-self: center;
+    background: #ffffff; /* สีพื้นหลังของปุ่ม */
+    border-radius: 20px; /* ขอบโค้งของปุ่ม */
+    margin-top: 30px;
+    padding-top: 30px;
+    text-align: center;
+    /* margin-left: 5%; */
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+
+  }
+
+  #fileInput {
+    width: 200px;
+    height: 200px;
+    position: absolute; /* ตั้งค่าเป็น absolute เพื่อให้ input file อยู่ในตำแหน่งที่ถูกต้องภายใน div */
+    top: 0; /* ตั้งให้ input file อยู่ที่ด้านบนของ div */
+    left: 0; /* ตั้งให้ input file อยู่ที่ด้านซ้ายของ div */
+    opacity: 0; /* ทำให้ input file โปร่งใสเพื่อซ่อนการแสดงผล */
+    cursor: pointer; /* เปลี่ยนรูปร่างเป็นตัวชี้เมื่อชี้ที่ div */
+    
+  }
+
+  #preview {
+    display: grid;
+    width: 200px;
+    height: 230px;
+  }
+
+  .file-input:hover {
+    background-color: #e0e0e0; /* เปลี่ยนสีพื้นหลังของปุ่มเมื่อเม้าส์ไปชี้ */
+  }
+
+  .img {
+    margin: auto;
+    width: auto;
+    height: 95%;
+  
+  }
+
+.add-img {
+    border-radius: 100%;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: transparent;
+    background-color: #6366f1;
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));    
+    color: white;
+    top:26%;
+    left: 47%;
+}
+
+.text-add-img {
+    font-size: small;
+    position: absolute;
+    top: 32%;
+    left:40%;
+    font-weight: lighter;
+    color: #414141;
+    
+}
+
+#preview {
+  max-width: 100%; /* ให้ภาพไม่เกินความกว้างของ div */
+  max-height: 300px; /* กำหนดความสูงสูงสุดของภาพ */
+}
+
+#pane-tag {
+    justify-self: center;
+    text-align: center;
+    width: 350px;
+    display: grid;
+    margin-top: 80px;
+    flex-wrap: wrap;
+}
+
+.text-tag {
+    font-size: large;
+    background-color: #ffffff;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.tag {
+    display: block;
+}
+
+.box-tag {
+    justify-self: center;
+    text-align: center;
+    width: 350px;
+    height: 120px;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    border-radius: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.val {
+    grid-row: span 3 / span 3;
+    justify-self: center;
+    align-self: center;
+    margin-left: 20px;
+    font-size: large;
+    border-radius: 20px;
+}
+
+.add-tag {
+    justify-self: center;
+    align-self: center;
+    border-radius: 6px;
+    border-color: transparent;
+    background-color: #ffc800;
+    width: 200px;
+    height: 30px;
+    font-size:12px;
+    color: black;
+    padding: 5px;
+}
+
+.add-tag::placeholder{
+    color: #414141;
+}
+
+.input-submit {
+    height: 40px;
+    width: 100%;
+    grid-column: span 4 / span 4;
+    grid-row: span 2/ span 2;
+
+    margin-left: 20%;
+
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    gap: 10%;
+}
+
+.add-tag-slider {
+
+    -webkit-appearance:none; /* Remove default styling for WebKit browsers */
+    width: 80%; /* Set the width of the slider */
+    height: 10px; /* Set the height of the slider */
+    margin-top: 10%;
+    margin-left: 10%;
+    border-radius: 5px; /* Set the border radius */
+    background-color:#6366f1; /* Set the background color of the slider track */
+    outline: none; /* Remove outline */
+    grid-column: span 4/ span 4;
+
+   
+  }
+  
+  .add-tag-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+    appearance: none; /* Remove default styling */
+    width: 20px; /* Set the width of the slider thumb */
+    height: 20px; /* Set the height of the slider thumb */
+    border-radius: 50%; /* Set the border radius to make it circular */
+    background: #ffc800; /* Set the background color of the slider thumb */
+    cursor: pointer; /* Set cursor to pointer */
+    -ms-progress-appearance: ring;
+
+  }
+  
+  .add-tag-slider::-moz-range-thumb {
+    width: 20px; /* Set the width of the slider thumb for Firefox */
+    height: 20px; /* Set the height of the slider thumb for Firefox */
+    border-radius: 50%; /* Set the border radius to make it circular for Firefox */
+    background: #ffc800; /* Set the background color of the slider thumb for Firefox */
+    cursor: pointer; /* Set cursor to pointer for Firefox */
+    -ms-progress-appearance: ring;
+
+
+  }
+
+  #submit {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border-color: transparent;
+    background-color: #ffc800;
+    font-size:20px;
+    font-weight: bold;
+    align-self: end;
+    margin-right: 5px;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+    
+  }
+
+  #submit:hover{
+    background-color: #6366f1;
+    color: #fff;
+  }
+
+  .delete-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border-color: transparent;
+    background-color: #ffc800;
+    font-size:25px;
+    font-weight: bold;
+    align-self: end;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+    
+  }
+
+  .delete-button:hover{
+    background-color: #6366f1;
+    color: #fff;
+  }
+
+  .back {
+    margin-left: 25%;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #8963f1;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));    
+   
+  }
+
+  .back:hover {
+    color: #414141;
+    background-color: #ffc800;
+
+  }
+
+
+  .post {
+    
+    margin-left: 5%;
+    font-size: large;
+    font-weight: bold;
+    justify-self: start;
+    color: white;
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #8b5cf6;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  }
+
+  .post:hover{
+    background-color: #ffc800;
+    color: #414141;
+
+  }
+
+  .post:active {
+    color: inherit;
+  }
+
+  
+  
+  
+  
+
