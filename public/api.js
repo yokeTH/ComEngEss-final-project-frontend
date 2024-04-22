@@ -1,6 +1,5 @@
 import { BACKEND_URL } from './configs.js';
-const auth =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI1NDU5ZjBiN2M5YWEzYzEzOGQ2MmMiLCJleHAiOjE3MTM4NDM1NzB9.MUu0OPlTYhH3uwltzQ4A3Owyl21g3MptTSigoPNUXqw';
+const token = localStorage.getItem('token');
 
 export async function createPost(post) {
   // console.log(auth)
@@ -10,7 +9,7 @@ export async function createPost(post) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      authorization: auth,
+      authorization: token,
     },
 
     body: JSON.stringify(post),
@@ -22,7 +21,7 @@ export async function getPostbyTopic(topicName) {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      authorization: auth,
+      authorization: token,
     },
   }).then((res) => res.json());
   console.log(`getPostbyTopic : ${posts}`);
