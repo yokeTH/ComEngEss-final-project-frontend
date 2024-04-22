@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       window.location.href = '../homepage/home.html';
     }
   });
-
-  async function freshToken() {
-    if (window.location.href != './index.html' && window.location.href != './authentication/authen.html') {
-      const oldToken = localStorage.getItem('token');
-      const newToken = await refreshToken(oldToken);
-      localStorage.setItem('token', newToken);
-    }
-  }
 });
+
+export async function getNewToken() {
+  const oldToken = localStorage.getItem('token');
+  const token = await refreshToken(oldToken);
+  const newToken = token.data.access_token;
+  localStorage.setItem('token', newToken);
+  console.log(localStorage.getItem('token'));
+}

@@ -94,6 +94,3 @@ export async function getTags(name) {
   }).then((a) => a.json());
   return tag;
 }
-export async function getTopics(name) {
-  const topic = await fetch();
-}

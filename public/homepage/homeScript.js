@@ -1,6 +1,9 @@
 import { getPost } from '../controller/api.js';
+import { getNewToken } from 'http://localhost:3000/main.js';
 document.addEventListener('DOMContentLoaded', async () => {
   // start////////////////////////////////////////////////////////
+  await getNewToken();
+  console.log(localStorage.getItem('token'));
   let next = 1;
   const scrollableContainer = document.getElementById('container');
   // for (let i = 0; i <= 3; i++) {
