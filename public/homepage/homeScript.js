@@ -1,5 +1,5 @@
 import { getPost } from '../controller/api.js';
-import { getNewToken } from 'http://localhost:3000/main.js';
+import { getNewToken } from '../main.js';
 document.addEventListener('DOMContentLoaded', async () => {
   // start////////////////////////////////////////////////////////
   await getNewToken();
