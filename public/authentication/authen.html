@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="authenStyle.css">
+        <title>sign in</title>
+    </head>
+    <body>
+        <div class="mobile-layout"> 
+            <div class="wrapper">
+                <div class="login-register">
+                <div class ="login-form">
+                    <h2>Login</h2>
+      
+                        <div class="input-box">
+                            
+                            <input type="username" placeholder="Username" id="login-username" required>
+                            
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="password" placeholder="Password" id="login-password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn" id="login">Login</button>
+                        
+                            <p>Don't have an account?
+                                <a href="#" class="register-link">Register</a>
+                            </p>
+                        </div>
+               
+                </div>
+                <div class ="register-form">
+                    <h2>Register</h2>
+                    
+                        <div class="input-box">
+                           
+                            <input type="username" placeholder="Username" id="regis-username" required>
+                            
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="email" placeholder="Email" id="regis-email" required>
+                            
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="password" placeholder="Password" id="regis-password" required>
+                            
+                        </div>
+                        
+                        <button type="submit" class="btn" id="register" >Register</button>
+                        <div class="login-register">
+                            <p>Already have an account?
+                                <a href="#" class="login-link">Login</a>
+                            </p>
+                        </div>
+                        
+                
+                </div>
+                <div class="popup">
+                    <span class="popuptext" id ="myPopup">
+                        "wrong username or password!"
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <script type="module" src="authenScript.js"></script>
+        <!-- <script type="module" src="../controller/main.js"></script> -->
+
+    </body>
+</html>
