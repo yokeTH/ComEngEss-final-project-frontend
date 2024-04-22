@@ -4,6 +4,10 @@ let topicName = '';
 let tags = [];
 let imageUrl = '';
 
+export function goBack() {
+  window.location.href = `../../reviewPage/index.html?topic=${topicName}`;
+}
+
 export async function getTopicName() {
   const query = new URLSearchParams(window.location.search);
   topicName = query.get('topic').toString();

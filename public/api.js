@@ -1,6 +1,6 @@
 import { BACKEND_URL } from './configs.js';
 const auth =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI1NDU5ZjBiN2M5YWEzYzEzOGQ2MmMiLCJleHAiOjE3MTM4Mzk1MzN9.4m2aSHcceLrDver_kyQWffL2jr2rdOCNsT9RfmLuUF4';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjI1NDU5ZjBiN2M5YWEzYzEzOGQ2MmMiLCJleHAiOjE3MTM4NDM1NzB9.MUu0OPlTYhH3uwltzQ4A3Owyl21g3MptTSigoPNUXqw';
 
 export async function createPost(post) {
   // console.log(auth)

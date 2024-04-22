@@ -1,5 +1,4 @@
-import { createTag, updateValue, post, handleFile, drawTable } from './fetchAndDraw.js';
-
+import { createTag, updateValue, goBack, post, handleFile, drawTable } from './fetchAndDraw.js';
 document.addEventListener('DOMContentLoaded', () => {
   drawTable();
   const slider = document.getElementById('add-tag-slider');
@@ -10,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const submit = document.getElementById('submit');
   submit.addEventListener('click', () => {
     createTag();
+  });
+
+  const back = document.querySelector('.back');
+  back.addEventListener('click', () => {
+    goBack();
   });
 
   const img = document.getElementById('fileInput');
