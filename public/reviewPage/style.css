@@ -6,34 +6,28 @@
 html {
   margin: 0;
   background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
-
 }
 
 body{
   margin: 0;
-  min-height: 950px;
+  min-height: 100vh;
   min-width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-position: center;
   position: fixed;
   background-image: linear-gradient(to top right,#244ea6,#6d28d9,#6366f1);
-
-
 }
 
-
-@media screen and (min-width: 800px) {
-    .mobile-layout {
-        margin-left: 37%;
-        display: flex;
-        /* justify-content: center;  */
-        align-items: center;
-        overflow-y: scroll;
-    }
-    
+.container {
+  aspect-ratio: 9/16;
+  flex-direction: column;
+  display: flex;
+  gap: 1rem;
 }
+
 a:link {
     text-decoration: none; /* ไม่มีขีดเส้นใต้ */
     color: inherit; /* ใช้สีเดียวกับข้อความทั่วไป */
@@ -52,18 +46,11 @@ a:link {
   }
 
 .mobile-layout {
-    width: 375px;
-    max-height: 74vh;
-    /* margin-top: 10px; */
+  aspect-ratio: 9/16;
+    max-height: 85vh;
     margin: auto;
-    display: grid;
-    flex-direction: column;
     overflow-y: scroll;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-47%);
-    position: fixed;
-    
+  
 }
 
 .mobile-layout::-webkit-scrollbar{
@@ -72,7 +59,7 @@ a:link {
 
 #topic{
   top: 2rem;
-  width: 350px;
+  width: 100%;
   height: 50px;
   margin: auto;
   justify-self: center;
@@ -84,13 +71,10 @@ a:link {
   padding-bottom: 2px;
   font-size: 25px;
   background-color: #ffffff;
-  position: fixed;
 }
 
 .div {
-  margin-top: 2%;
-  display: grid;
-  position: relative;
+  /* position: relative; */
  
 }
 
@@ -98,28 +82,26 @@ a:link {
   margin-top: 10px;
   justify-self: start;
   align-self: start;
-  
-  
   background-color: rgba(144, 110, 255, 0.554);
   opacity: 100%;
   border-radius: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 12px;
-  /* box-shadow: #414141; */
-  filter: drop-shadow(0 20px 20px rgb(0 0 0 / 0.15));
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: inline-block;
+  width: 94%;
 }
 
 .post-background {
     /* position: relative; */
     justify-self: center;
-    width: 350px;
+    /* width: 350px; */
     height: auto;
-    max-height: 800px;
+    /* max-height: 800px; */
     background-color: whitesmoke;    
     border-radius: 12px;
     margin-bottom: 16px;
     display: grid;
-    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
 
 .img {
@@ -140,14 +122,10 @@ a:link {
 
 .tag-component {
   width: 100%;
-  height: 80px;
   background-color: #b4b4e8;
-  
-  
   opacity: 80%;
   border-radius: 15px;
   overflow-y: scroll;
-  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 }
 
 .each-tag {
