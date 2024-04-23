@@ -147,7 +147,7 @@ export async function post() {
     // localStorage.setItem('topic', topicName);
 
     drawTable();
-    window.location.href = "/public/homepage/home.html";
+    window.location.href = "/homepage/home.html";
   }
 }
 
