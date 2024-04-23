@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // for (let i = postarray.length - 1; i >= 0; i--) {
     // const num = generateUniqueRandomNumbers(1, postarray.length - 1);
     console.log(post);
+    console.log(postarray);
     // console.log(post.data[i].topic.name);
     console.log(post.topic.name);
     scrollableContainer.appendChild(
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (scrollTop + containerHeight >= contentHeight - 1) {
       // for (let i = postarray.length - 1; i >= 0; i--) {
       for (let post of postarray) {
-        console.log(i);
+        // console.log();
         console.log(post);
         scrollableContainer.appendChild(
           appendNewPage(post.photoUrl, post.topic.name)
