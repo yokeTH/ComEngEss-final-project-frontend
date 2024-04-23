@@ -19,18 +19,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (post.status.code !== 200) {
     window.location.href = "/authentication/authen.html";
   }
+
   let postarray = post.data;
   postarray.reverse();
+  console.log(postarray);
   for (let post of postarray) {
     // for (let i = postarray.length - 1; i >= 0; i--) {
     // const num = generateUniqueRandomNumbers(1, postarray.length - 1);
-    console.log(post);
-    console.log(postarray);
+
+    console.log(post.topic);
     // console.log(post.data[i].topic.name);
-    console.log(post.topic.name);
-    scrollableContainer.appendChild(
-      appendNewPage(post.photoUrl, post.topic.name)
-    );
+
+    if (post.topic == undefined) {
+      scrollableContainer.appendChild(appendNewPage(post.photoUrl, "Quality"));
+    } else {
+      scrollableContainer.appendChild(
+        appendNewPage(post.photoUrl, post.topic.name)
+      );
+    }
 
     next++;
   }
