@@ -1,13 +1,13 @@
-import { getPost } from '../controller/api.js';
-import { checkToken, getNewToken } from '../main.js';
+import { getPost } from "../controller/api.js";
+import { checkToken, getNewToken } from "../main.js";
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // start////////////////////////////////////////////////////////
   checkToken();
   await getNewToken();
-  console.log(localStorage.getItem('token'));
+  console.log(localStorage.getItem("token"));
   let next = 1;
-  const scrollableContainer = document.getElementById('container');
+  const scrollableContainer = document.getElementById("container");
 
   // for (let i = 0; i <= 3; i++) {
   //   const url = await getPost().photoUrl;
@@ -17,59 +17,65 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const post = await getPost();
   if (post.status.code !== 200) {
-    window.location.href = '/authentication/authen.html';
+    window.location.href = "/authentication/authen.html";
   }
-  const postarray = post.data;
-  for (let i = 0; i <= postarray.length; i++) {
-    const num = generateUniqueRandomNumbers(1, postarray.length - 1);
-    console.log(num);
-    console.log(i);
-    console.log(post.data[num].topic.name);
-    scrollableContainer.appendChild(appendNewPage(post.data[num].photoUrl, post.data[num].topic.name));
+  let postarray = post.data;
+  postarray.reverse();
+  for (let post of postarray) {
+    // for (let i = postarray.length - 1; i >= 0; i--) {
+    // const num = generateUniqueRandomNumbers(1, postarray.length - 1);
+    console.log(post);
+    // console.log(post.data[i].topic.name);
+    console.log(post.topic.name);
+    scrollableContainer.appendChild(
+      appendNewPage(post.photoUrl, post.topic.name)
+    );
 
     next++;
   }
 
-  const createTopicButton = document.querySelector('#add-topic-button');
-  createTopicButton.addEventListener('click', () => {
-    window.location.href = '../createTopic/index.html';
+  const createTopicButton = document.querySelector("#add-topic-button");
+  createTopicButton.addEventListener("click", () => {
+    window.location.href = "../createTopic/index.html";
   });
 
   // process/////////////////////////////////////////////////////////
 
-  scrollableContainer.addEventListener('scroll', async () => {
+  scrollableContainer.addEventListener("scroll", async () => {
     const scrollTop = scrollableContainer.scrollTop;
     const containerHeight = scrollableContainer.clientHeight;
     const contentHeight = scrollableContainer.scrollHeight;
 
     if (scrollTop + containerHeight >= contentHeight - 1) {
-      for (let i = 0; i <= postarray; i++) {
-        const num = generateUniqueRandomNumbers(1, postarray.length - 1);
-        console.log(num);
-        console.log(post.data[num]);
-        scrollableContainer.appendChild(appendNewPage(post.data[num].photoUrl, post.data[num].topic.name));
+      // for (let i = postarray.length - 1; i >= 0; i--) {
+      for (let post of postarray) {
+        console.log(i);
+        console.log(post);
+        scrollableContainer.appendChild(
+          appendNewPage(post.photoUrl, post.topic.name)
+        );
 
         next++;
       }
     }
   });
-  const searchBox = document.querySelector('.search-box');
-  // const icon = document.querySelector('.icon');
+  // const searchBox = document.querySelector(".search-box");
+  // // const icon = document.querySelector('.icon');
 
-  searchBox.addEventListener('click', () => {
-    searchBox.classList.toggle('expanded');
-    setTimeout(() => {
-      warp();
-    }, 500);
-    setTimeout(() => {
-      searchBox.classList.toggle('expanded');
-    }, 500);
-    // searchBox.classList.toggle('expanded');
-    // setTimeout(searchBox.classList.toggle('expanded'), 1000);
-  });
-  function warp() {
-    window.location.href = '../search/search.html';
-  }
+  // searchBox.addEventListener("click", () => {
+  //   searchBox.classList.toggle("expanded");
+  //   setTimeout(() => {
+  //     warp();
+  //   }, 500);
+  //   setTimeout(() => {
+  //     searchBox.classList.toggle("expanded");
+  //   }, 500);
+  //   // searchBox.classList.toggle('expanded');
+  //   // setTimeout(searchBox.classList.toggle('expanded'), 1000);
+  // });
+  // function warp() {
+  //   window.location.href = "../search/search.html";
+  // }
 
   // back/////////////////////////////////////////////////////////////////
 
@@ -85,17 +91,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   // }
 
   function appendNewPage(url, topicName) {
-    const newPage = document.createElement('section');
-    newPage.id = 'page' + next;
-    newPage.className = 'page';
-    const newFrame = document.createElement('div');
-    newFrame.id = 'pic' + next;
-    newFrame.className = 'pic';
-    const newPic = document.createElement('img');
-    newPic.setAttribute('value', topicName);
-    newPic.setAttribute('src', url);
+    const newPage = document.createElement("section");
+    newPage.id = "page" + next;
+    newPage.className = "page";
+    const newFrame = document.createElement("div");
+    newFrame.id = "pic" + next;
+    newFrame.className = "pic";
+    const newPic = document.createElement("img");
+    newPic.setAttribute("value", topicName);
+    newPic.setAttribute("src", url);
 
-    newPic.addEventListener('click', function () {
+    newPic.addEventListener("click", function () {
       const topic = this.value;
       console.log(topic);
       window.location.href = `../reviewPage/index.html?topic=${topicName}`;
@@ -115,7 +121,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function generateUniqueRandomNumbers(count, maxNumber) {
     if (count > maxNumber) {
-      throw new Error('Count should not be greater than maxNumber');
+      throw new Error("Count should not be greater than maxNumber");
     }
     const numbers = Array.from({ length: maxNumber }, (_, i) => i + 1);
     const shuffledNumbers = shuffleArray(numbers);

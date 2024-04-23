@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   function isValidEmail(email) {
     // Regular expression for validating an email address
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    popupTool("Email not correct");
+    // popupTool("Email not correct");
     // Test the email against the regular expression
     return emailRegex.test(email);
   }
