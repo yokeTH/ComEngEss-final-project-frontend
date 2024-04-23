@@ -7,9 +7,9 @@ export async function createUser(username, email, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username: username,
-      email: email,
-      password: password,
+      username,
+      email,
+      password,
     }),
   }).then((res) => res.json());
   return user;
@@ -22,8 +22,8 @@ export async function login(username, password) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username: username,
-      password: password,
+      username,
+      password,
     }),
   }).then((res) => res.json());
   return info;
@@ -36,7 +36,7 @@ export async function refreshToken(token) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      token: token,
+      token,
     }),
   }).then((a) => a.json());
   return newToken;
@@ -83,7 +83,7 @@ export async function getPostByTag() {
   }).then((a) => a.json());
   return post;
 }
-/////////tag//////////////////////////////////////////////////////////
+/// //////tag//////////////////////////////////////////////////////////
 export async function getTags(name) {
   const tag = await fetch(`${backEndUrl}/tagtop/tags`, {
     method: 'GET',

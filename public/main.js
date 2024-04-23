@@ -1,4 +1,3 @@
-
 import { refreshToken } from './controller/api.js';
 document.addEventListener('DOMContentLoaded', async () => {
   const welcome = document.querySelector('.set-to-click');
@@ -23,4 +22,14 @@ export async function getNewToken() {
   const newToken = token.data.access_token;
   localStorage.setItem('token', newToken);
   console.log(localStorage.getItem('token'));
+}
+
+export async function checkToken() {
+  const token = localStorage.getItem('token');
+  const newToken = await refreshToken(token);
+  console.log(newToken);
+  console.log(token);
+  if (newToken.data === 'expired') {
+    window.location.href = '../authentication/authen.html';
+  }
 }
