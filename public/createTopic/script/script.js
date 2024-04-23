@@ -1,6 +1,8 @@
+import { checkToken } from '../../main.js';
 import { createTag, updateValue, post, handleFile } from './fetchAndDraw.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  checkToken();
   const slider = document.getElementById('add-tag-slider');
   slider.addEventListener('change', () => {
     updateValue();

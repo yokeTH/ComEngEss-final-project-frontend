@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const popup = document.getElementById('myPopup');
     document.getElementById('myPopup').innerHTML = message;
     popup.classList.toggle('show');
-    const wrongtime = setTimeout(tryagain, 3000);
-    function tryagain() {
-      popup.classList.toggle('show');
-    }
+    // const wrongtime = setTimeout(tryagain, 3000);
+    // function tryagain() {
+    //   popup.classList.toggle('show');
+    // }
   }
 
   function isValidPassword(password) {
