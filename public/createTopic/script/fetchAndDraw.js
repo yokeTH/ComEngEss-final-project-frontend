@@ -152,7 +152,6 @@ export async function handleFile() {
     const imageElement = document.createElement("img");
     imageElement.setAttribute("class", "img");
     imageElement.src = imageUrl;
-    localStorage.setItem("imgUrl", imageUrl);
     preview.appendChild(imageElement);
   };
   preview.setAttribute("id", "img-bg");
