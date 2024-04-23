@@ -22,7 +22,7 @@ body{
 }
 
 .container {
-  aspect-ratio: 9/21.5;
+  aspect-ratio: 9/19.5;
   flex-direction: column;
   display: flex;
   gap: 1rem;
@@ -46,7 +46,7 @@ a:link {
   }
 
 .mobile-layout {
-  aspect-ratio: 9/21.5;
+  aspect-ratio: 9/19.5;
     max-height: 85vh;
     margin: auto;
     overflow-y: scroll;
@@ -178,8 +178,6 @@ a:link {
 
 
 .review-button {
-  
-  margin-left: 5%;
   font-size: large;
   font-weight: bold;
   justify-self: start;
