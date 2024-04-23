@@ -53,23 +53,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     }
   });
-  const searchBox = document.querySelector('.search-box');
+  // const searchBox = document.querySelector('.search-box');
   // const icon = document.querySelector('.icon');
 
-  searchBox.addEventListener('click', () => {
-    searchBox.classList.toggle('expanded');
-    setTimeout(() => {
-      warp();
-    }, 500);
-    setTimeout(() => {
-      searchBox.classList.toggle('expanded');
-    }, 500);
-    // searchBox.classList.toggle('expanded');
-    // setTimeout(searchBox.classList.toggle('expanded'), 1000);
-  });
-  function warp() {
-    window.location.href = '../search/search.html';
-  }
+  // searchBox.addEventListener('click', () => {
+  //   searchBox.classList.toggle('expanded');
+  //   setTimeout(() => {
+  //     warp();
+  //   }, 500);
+  //   setTimeout(() => {
+  //     searchBox.classList.toggle('expanded');
+  //   }, 500);
+  //   // searchBox.classList.toggle('expanded');
+  //   // setTimeout(searchBox.classList.toggle('expanded'), 1000);
+  // });
+  // function warp() {
+  //   window.location.href = '../search/search.html';
+  // }
 
   // back/////////////////////////////////////////////////////////////////
 
