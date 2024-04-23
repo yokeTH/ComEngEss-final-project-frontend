@@ -9,6 +9,29 @@ document.addEventListener("DOMContentLoaded", async () => {
   let next = 1;
   const scrollableContainer = document.getElementById("container");
 
+  document.addEventListener('keydown', (event) => {
+    const delta = 1000;
+
+    if (event.key === 'ArrowUp') {
+      scrollSmoothly(scrollableContainer, -delta);
+      event.preventDefault();
+    } else if (event.key === 'ArrowDown') {
+      scrollSmoothly(scrollableContainer, delta);
+      event.preventDefault();
+    }
+    function scrollSmoothly(element, amount) {
+      const currentScroll = element.scrollTop;
+      const targetScroll = currentScroll + amount;
+      element.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+
+
+
   // for (let i = 0; i <= 3; i++) {
   //   const url = await getPost().photoUrl;
   //   scrollableContainer.appendChild(appendNewPage(url));
@@ -48,24 +71,26 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // process/////////////////////////////////////////////////////////
 
-  scrollableContainer.addEventListener("scroll", async () => {
-    const scrollTop = scrollableContainer.scrollTop;
-    const containerHeight = scrollableContainer.clientHeight;
-    const contentHeight = scrollableContainer.scrollHeight;
+  // scrollableContainer.addEventListener("scroll", async () => {
+  //   const scrollTop = scrollableContainer.scrollTop;
+  //   const containerHeight = scrollableContainer.clientHeight;
+  //   const contentHeight = scrollableContainer.scrollHeight;
 
-    if (scrollTop + containerHeight >= contentHeight - 1) {
-      // for (let i = postarray.length - 1; i >= 0; i--) {
-      for (let post of postarray) {
-        // console.log();
-        console.log(post);
-        scrollableContainer.appendChild(
-          appendNewPage(post.photoUrl, post.topic.name)
-        );
+  //   if (scrollTop + containerHeight >= contentHeight - 1) {
+  //     // for (let i = postarray.length - 1; i >= 0; i--) {
+  //     for (let post of postarray) {
+  //       // console.log();
+  //       console.log(post);
+  //       scrollableContainer.appendChild(
+  //         appendNewPage(post.photoUrl, post.topic.name)
+  //       );
 
-        next++;
-      }
-    }
-  });
+  //       next++;
+  //     }
+  //   }
+  // });
+
+
   // const searchBox = document.querySelector(".search-box");
   // // const icon = document.querySelector('.icon');
 
