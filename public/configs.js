@@ -1,1 +1,1 @@
-export const BACKEND_URL = 'https://cee-final-api.yoke-th.me/';
+export const BACKEND_URL = 'https://api.final-project.xyz/';
