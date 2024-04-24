@@ -26,6 +26,8 @@ body{
   flex-direction: column;
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 a:link {
@@ -47,10 +49,9 @@ a:link {
 
 .mobile-layout {
   aspect-ratio: 9/19.5;
-    max-height: 85vh;
+    max-height: 80vh;
     margin: auto;
     overflow-y: scroll;
-  
 }
 
 .mobile-layout::-webkit-scrollbar{
@@ -182,7 +183,7 @@ a:link {
   font-weight: bold;
   justify-self: start;
   color: #414141;
-  width: 70%;
+  width: 80%;
   height: 40px;
   border-radius: 10px;
   border: transparent;
@@ -200,9 +201,4 @@ a:link {
 .post:active {
   color: inherit;
 }
-
-  
-  
-  
-  
 
