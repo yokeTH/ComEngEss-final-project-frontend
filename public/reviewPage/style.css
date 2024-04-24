@@ -181,7 +181,6 @@ a:link {
 .review-button {
   font-size: large;
   font-weight: bold;
-  justify-self: start;
   color: #414141;
   width: 80%;
   height: 40px;
